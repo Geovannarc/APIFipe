@@ -5,7 +5,10 @@ const modelo = document.querySelector('#modelo');
 const ano = document.querySelector('#ano');
 const valor = document.querySelector('#resposta');
 const botao = document.querySelector('.botao');
-// const url, urlmarca, urlmodelo, urlano = ""
+let url= "";
+let urlmarca = "";
+let urlmodelo = "";
+let urlano = "";
 
 tipo.addEventListener('change', (event) => {
         urlmarca = `https://parallelum.com.br/fipe/api/v1/${event.target.value}/marcas`
