@@ -10,7 +10,7 @@ let urlmarca = "";
 let urlmodelo = "";
 let urlano = "";
 
-tipo.addEventListener('change', (event) => {
+tipo.addEventListener('click', (event) => {
         urlmarca = `https://parallelum.com.br/fipe/api/v1/${event.target.value}/marcas`
     carregarDados()
 });
@@ -42,7 +42,7 @@ const preencherOpcoes = (resposta) => {
     }
 }
 
-marca.addEventListener('change', async (event) => { 
+marca.addEventListener('click', async (event) => { 
     let idmarca = event.target.value;
     urlmodelo = `${urlmarca}/${idmarca}/modelos`
     carregarDadosModelo()
@@ -72,7 +72,7 @@ const buscarModeloFetchAPI = async () => {
     .catch((erro) => erro)
 }
 
-modelo.addEventListener('change', async (event) => { 
+modelo.addEventListener('click', async (event) => { 
     let idmodelo = event.target.value;
     urlano = `${urlmodelo}/${idmodelo}/anos`
     carregarDadosAno()
@@ -103,7 +103,7 @@ const preencherOpcoesAno = async (resposta) => {
     }
 }
 
-ano.addEventListener('change', async (event) => { 
+ano.addEventListener('click', async (event) => { 
     let idano = event.target.value;
     url = `${urlano}/${idano}`
     carregarDadosResposta()
