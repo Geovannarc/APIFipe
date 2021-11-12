@@ -103,7 +103,7 @@ const preencherOpcoesAno = async (resposta) => {
     }
 }
 
-ano.addEventListener('click', async (event) => { 
+ano.addEventListener('change', async (event) => { 
     let idano = event.target.value;
     url = `${urlano}/${idano}`
     carregarDadosResposta()
