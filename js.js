@@ -37,7 +37,7 @@ const preencherOpcoes = (resposta) => {
       return 
     }else{
       const listadeMarcasHTML = resposta.map((opcao) => criarOpcao(opcao)).join('')
-      marca.innerHTML = listadeMarcasHTML;
+      marca.innerHTML = "<option value=''>Selecione...</option>" + listadeMarcasHTML;
       console.log(criarOpcao(resposta[0]))
     }
 }
@@ -63,7 +63,7 @@ const preencherOpcoesModelo = (resposta) => {
     }else{
         console.log(resposta);
       const listadeModelosHTML = resposta.modelos.map((opcao) => criarOpcao(opcao)).join('')
-      modelo.innerHTML = listadeModelosHTML;
+      modelo.innerHTML = "<option value=''>Selecione...</option>" +listadeModelosHTML;
     }
 }
 const buscarModeloFetchAPI = async () => {
@@ -99,11 +99,11 @@ const preencherOpcoesAno = async (resposta) => {
     }else{
         console.log(resposta);
         const listadeAnosHTML = resposta.map((opcao) => criarOpcao(opcao)).join('')
-        ano.innerHTML = listadeAnosHTML;
+        ano.innerHTML = "<option value=''>Selecione...</option>" + listadeAnosHTML;
     }
 }
 
-ano.addEventListener('click', async (event) => { 
+ano.addEventListener('change', async (event) => { 
     let idano = event.target.value;
     url = `${urlano}/${idano}`
     carregarDadosResposta()
